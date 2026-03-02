@@ -1,6 +1,6 @@
 # Playlist Importer
 
-A Flask backend that imports playlists from Spotify or YouTube Music into Jellyfin. Matches tracks already in the Jellyfin library, requests missing ones via Lidarr, and downloads any still-missing tracks directly via Deemix or Spooty. After the initial import, the playlist is automatically updated every 6 hours for 24 hours as newly downloaded tracks become available.
+A Flask backend that imports playlists from Spotify or YouTube Music into Jellyfin. Matches tracks already in the Jellyfin library, requests missing ones via Lidarr (on steroids), and downloads any still-missing tracks directly via Deemix or Spooty. After the initial import, the playlist is automatically updated every 6 hours for 24 hours as newly downloaded tracks become available.
 
 Triggered via the Playlist Importer UI hosted on the [landing page](https://github.com/Treyzer567/landing-page), which is embedded as an iframe panel in Homarr.
 
@@ -68,3 +68,17 @@ Runs as a Docker container defined in `landing-compose.yml` in the [landing-page
 | Repo | Description |
 |------|-------------|
 | [landing-page](https://github.com/Treyzer567/landing-page) | Frontend hub — hosts the Playlist Importer UI iframe |
+
+---
+
+## External Projects
+
+| Project | Description |
+|---------|-------------|
+| [Jellyfin](https://github.com/jellyfin/jellyfin) | Open source media server — destination for imported playlists |
+| [Lidarr on Steroids](https://github.com/youegraillot/lidarr-on-steroids) | Lidarr with built-in Deemix integration — used to request and download missing tracks |
+| [Deemix](https://deemix.app) | Deezer-based music downloader — bundled inside Lidarr on Steroids |
+| [Spooty](https://github.com/Raiper34/spooty) | Self-hosted Spotify downloader — fallback for tracks not found via Lidarr/Deemix |
+| [Homarr](https://github.com/homarr-labs/homarr) | Self-hosted dashboard — where the Playlist Importer UI is embedded as an iFrame |
+| [Spotify for Developers](https://developer.spotify.com) | API used to fetch playlist track metadata |
+| [YouTube Data API](https://developers.google.com/youtube/v3) | API used to fetch YouTube Music playlist metadata |
