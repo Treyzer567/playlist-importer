@@ -1,0 +1,10 @@
+Flask
+gunicorn
+spotipy
+jellyfin-sdk
+pyjwt
+cryptography
+flask-cors
+requests
+musicbrainzngs
+Pillow>=10.0.0
